@@ -13,7 +13,6 @@
             <column name="idSala" type="BIGINT">
                 <constraints nullable="true" foreignKeyName="fk_sala" references="sala(id)" />
             </column>
-
              </createTable>
         <rollback>
             <dropTable tableName="biglietti" />

@@ -1,5 +1,6 @@
 package com.example.cinema.service.impl;
 
+import com.example.cinema.model.Biglietto;
 import com.example.cinema.model.Sala;
 import com.example.cinema.model.Spettatore;
 import com.example.cinema.repository.SalaRepository;
@@ -28,6 +29,10 @@ public class SpettatoreServiceImpl implements SpettatoreService {
     public List<Spettatore> getByIdSala(int id) {
         return null;
 
+
+
+
+
    /*     spettatoreRe
 
 
@@ -52,7 +57,5 @@ public class SpettatoreServiceImpl implements SpettatoreService {
 
     }
 
+
 }
-
-
-

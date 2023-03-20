@@ -1,5 +1,6 @@
 package com.example.cinema.service.impl;
 
+import com.example.cinema.model.Sala;
 import com.example.cinema.model.Spettatore;
 import com.example.cinema.repository.SalaRepository;
 import com.example.cinema.repository.SpettatoreRepository;
@@ -22,19 +23,25 @@ public class SalaServiceImpl implements SalaService {
 
     @Override
     public Boolean emptySala(int id) {
-      /*  Sala sala = salaRepository.getById(id);
+        //Boolean result = false;
+        Sala sala = salaRepository.getById(id);
 
+        List<Spettatore> spettatoreList = spettatoreRepository.findAll();
+        if (!spettatoreList.isEmpty()) {
+            for(Spettatore spettatore : spettatoreList) {
+                if(spettatore.getBiglietto().getSala().getId()==id){
+                    spettatoreList.remove(spettatore);
+                }
+            }
+           // spettatoreList.stream().forEach(spettatore -> spettatoreList.remove(spettatore));
+        }
 
-        List<Spettatore> spettatoreList= spettatoreRepository.getByIdSala(id);
-        if(!spettatoreList.isEmpty()){
-            spettatoreList.stream().forEach(spettatore -> spettatoreList.remove(spettatore));
-        }*/
-
-    return true;
+        return true;
     }
 
     @Override
     public Spettatore consentireIngresso(int id, String nome, String cognome, LocalDate dataDiNascita) {
+        Sala sala = salaRepository.getReferenceById(id);
         return null;
     }
 }

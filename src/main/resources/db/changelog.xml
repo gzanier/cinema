@@ -5,10 +5,9 @@
 
 
     <include file="/db/2023-03-20-create_table_film.xml"/>
-
     <include file="/db/2023-03-20-create_table_biglietto2.xml"/>
     <include file="/db/2023-03-20-create_table_sala.xml"/>
     <include file="/db/2023-03-20-create_table_spettatore.xml"/>
     <include file="/db/2023-03-20-create_table_cinema2.xml"/>
-
+    <include file="/db/2023-03-20-create_some_constraints.xml"/>
 </databaseChangeLog>

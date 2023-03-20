@@ -9,4 +9,6 @@ public interface SpettatoreService {
 
    public List<Spettatore> getByIdSala(int id);
 
+   //public Boolean insert(Spettatore s);
+
 }

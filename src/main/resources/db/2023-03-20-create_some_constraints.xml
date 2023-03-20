@@ -5,25 +5,14 @@
 
     <changeSet id="2023-03-15-change_table_cinema2" author="gzanier">
         <comment>MODIFY TABLE CINEMA</comment>
-        <update tableName="cinema">
-        <column name="spettatori" type=""
+        <addColumn tableName="biglietti">
+            <column name="idSala" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="fk_sala2" references="sala(id)"/>
+            </column>
 
-
-                foreignKeyName foreignKeyName="fk_biglietto" nullable="false" references="biglietti(id)"/>
-        </update>
-        <rollback>
-            <dropTable tableName="cinema"/>
-        </rollback>
+        </addColumn>
 
     </changeSet>
 
 
-    <changeSet id="2023-03-15-change_table_spettatori" author="gzanier">
-        <renameColumn tableName="spettatori" oldColumnName="sala" newColumnName="sala"/>
-    </renameColumn>
-    <addForeignKeyConstraint foreignKeyName="fk_salaFilm" nullable="false" references="film(id)"/>
-
 </databaseChangeLog>
-
-
-        </databaseChangeLog>
