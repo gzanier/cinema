@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2023-03-15-create_table_biglietto" author="gzanier">
+        <comment>CREATE TABLE BIGLIETTO </comment>
+        <createTable tableName="biglietti">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_biglietti"/>
+            </column>
+            <column name="posizione" type="VARCHAR(100)"></column>
+            <column name="prezzo" type="DOUBLE"></column>
+            <column name="idSala" type="BIGINT">
+                <constraints nullable="true" foreignKeyName="fk_sala" references="sala(id)" />
+            </column>
+
+             </createTable>
+        <rollback>
+            <dropTable tableName="biglietti" />
+        </rollback>
+
+    </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,15 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/cinema </property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">giulia</property>
+
+        <mapping class="org.example.cinema.model.Biglietto"></mapping>
+        <mapping class="org.example.cinema.model.Cinema"></mapping>
+        <mapping class="org.example.cinema.model.Film"></mapping>
+        <mapping class="org.example.cinema.model.Sala"></mapping>
+        <mapping class="org.example.cinema.model.Spettatore"></mapping>
+    </session-factory>
+</hibernate-configuration>
