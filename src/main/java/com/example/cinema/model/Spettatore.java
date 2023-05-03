@@ -24,12 +24,17 @@ public class Spettatore {
     private String nome;
     private String cognome;
     private LocalDate dataDiNascita;
-
+    @Transient
+    private int idBiglietto;
+    @OneToOne
+    @JoinColumn(name = "idBiglietto")
     private Biglietto biglietto;
 
 
     public Boolean isAdult() {
-        if(age(this.dataDiNascita)>=18){return true;}
+        if (age(this.dataDiNascita) >= 18) {
+            return true;
+        }
         return false;
     }
 
@@ -37,11 +42,12 @@ public class Spettatore {
         LocalDate today = LocalDate.now();
         return Period.between(this.dataDiNascita, today).getYears();
     }
+
     public Biglietto getSconto(Biglietto biglietto) {
-        if(age(this.dataDiNascita)>=70){
-            biglietto.setPrezzo( biglietto.getPrezzoRidotto(biglietto.getPrezzo(), 10.0) );
-        }else if(age(this.dataDiNascita)<5){
-            biglietto.setPrezzo( biglietto.getPrezzoRidotto(biglietto.getPrezzo(), 50.0) );
+        if (age(this.dataDiNascita) >= 70) {
+            biglietto.setPrezzo(biglietto.getPrezzoRidotto(biglietto.getPrezzo(), 10.0));
+        } else if (age(this.dataDiNascita) < 5) {
+            biglietto.setPrezzo(biglietto.getPrezzoRidotto(biglietto.getPrezzo(), 50.0));
         }
 
         return biglietto;

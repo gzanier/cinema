@@ -7,7 +7,7 @@
         <comment>MODIFY TABLE CINEMA</comment>
         <addColumn tableName="biglietti">
             <column name="idSala" type="BIGINT">
-                <constraints nullable="true" foreignKeyName="fk_sala2" references="sala(id)"/>
+                <constraints nullable="false" foreignKeyName="fk_sala2" references="sala(id)"/>
             </column>
 
         </addColumn>
